@@ -6,3 +6,4 @@ def calculate_bmi(weight, height):
 def analyze_bmi(bmi):     # BMI values < 18.5 UW, 18.5 - 24.9 N, > 25 OV, > 30 OB
   if bmi < 18.5:
     return "Underweight"
+  elif bmi
