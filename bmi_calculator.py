@@ -1,5 +1,6 @@
 #BMI ANALYSIS
 def calculate_bmi(weight, height):
+
   bmi = weight / (height ** 2)
   return bmi
 
@@ -12,3 +13,8 @@ def analyze_bmi(bmi):     # BMI values < 18.5 UW, 18.5 - 24.9 N, > 25 OV, > 30 O
     return "Overweight"
   else:
     return "Obese" 
+
+height = float(input("Enter your height in meters: "))
+weight = float(input("Enter your weight in kilograms: "))
+
+bmi = calculate_bmi(weight, height)
