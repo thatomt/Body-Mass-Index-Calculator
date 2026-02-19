@@ -1,5 +1,9 @@
 #BMI ANALYSIS
 def calculate_bmi(weight, height):
+  """
+  Calculate a person's Body Mass Index (BMI) and return
+  both the BMI value and its category.
+  """
 
   bmi = weight / (height ** 2)
   return bmi
@@ -18,3 +22,7 @@ height = float(input("Enter your height in meters: "))
 weight = float(input("Enter your weight in kilograms: "))
 
 bmi = calculate_bmi(weight, height)
+category = analyze(bmi)
+
+print(f"Your BMI is: {bmi:.2f}")
+print("BMI Analysis:", category)
