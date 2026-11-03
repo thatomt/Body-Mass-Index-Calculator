@@ -1,1 +1,91 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BMI Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>BMI Calculator</h1>
+        <p>Calculate your Body Mass Index and estimated healthy weight range.</p>
+    </header>
+
+    <main>
+
+        <section class="calculator">
+
+            <h2>Calculate Your BMI</h2>
+
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" placeholder="Enter your height">
+
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" placeholder="Enter your weight">
+
+            <button id="calculate-btn">Calculate BMI</button>
+            <button id="reset-btn">Reset</button>
+
+        </section>
+
+        <section class="results" id="results">
+
+            <h2>Your Results</h2>
+
+            <p>BMI: <span id="bmi-result">--</span></p>
+
+            <p>Category: <span id="bmi-category">--</span></p>
+
+            <p>Estimated healthy weight range:
+                <span id="weight-range">--</span>
+            </p>
+
+            <p id="health-message"></p>
+
+        </section>
+
+
+        <section class="bmi-information">
+
+            <h2>Important: Understanding Your BMI</h2>
+
+            <p>
+                BMI is a screening tool and does not directly measure
+                body fat or determine an individual's overall health.
+            </p>
+
+            <h3>Pregnancy</h3>
+
+            <p>
+                Standard adult BMI categories should not be used to
+                assess weight status during pregnancy. Pregnancy
+                requires separate clinical assessment.
+            </p>
+
+            <h3>Bodybuilders and muscular individuals</h3>
+
+            <p>
+                BMI does not distinguish between muscle and fat.
+                People with high muscle mass may have a high BMI
+                without having excess body fat.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>BMI Calculator | Nutrition Health Tool</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
