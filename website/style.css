@@ -1,0 +1,275 @@
+
+/* General page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f6fa;
+    color: #263b50;
+    margin: 0;
+    padding: 0;
+}
+
+/* Website header */
+header {
+    background-color: #263b50;
+    color: white;
+    padding: 30px 20px;
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: auto;
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+
+header p {
+    margin: 0;
+    color: #d5e0eb;
+}
+
+/* Main content */
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+/* Main calculator container */
+.calculator-container {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 35px;
+    background-color: white;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+}
+
+/* Calculator section */
+.calculator h2,
+.results h2 {
+    margin-top: 0;
+    font-size: 23px;
+}
+
+.calculator > p {
+    color: #718096;
+    margin-bottom: 30px;
+}
+
+/* Input groups */
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+/* Input wrapper */
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccd5df;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.input-wrapper span {
+    padding: 13px;
+    background-color: #f0f4f8;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Buttons */
+button {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#calculate-btn {
+    width: 100%;
+    background-color: #2589e8;
+    color: white;
+}
+
+#reset-btn {
+    width: 100%;
+    background-color: #e9eef4;
+    color: #263b50;
+}
+
+button:hover {
+    opacity: 0.88;
+}
+
+/* Results section */
+.results {
+    text-align: center;
+}
+
+.bmi-value {
+    margin: 20px 0;
+}
+
+#bmi-result {
+    font-size: 48px;
+    font-weight: bold;
+    color: #2589e8;
+}
+
+#bmi-category {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #20a67a;
+}
+
+/* BMI gauge */
+.bmi-gauge {
+    max-width: 460px;
+    margin: 20px auto;
+}
+
+.bmi-gauge svg {
+    width: 100%;
+    display: block;
+    overflow: visible;
+}
+
+.gauge-ranges,
+.gauge-categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    font-size: 11px;
+}
+
+.gauge-ranges {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.gauge-categories {
+    margin-top: 7px;
+    color: #718096;
+}
+
+/* Estimated healthy weight range */
+.weight-range {
+    background-color: #edf7ff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.weight-range h3 {
+    font-size: 17px;
+    margin-top: 0;
+}
+
+#weight-range {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2589e8;
+    margin: 10px 0;
+}
+
+.weight-range small {
+    color: #64748b;
+}
+
+/* Health interpretation */
+.health-information,
+.bmi-information {
+    background-color: white;
+    padding: 28px;
+    margin-top: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.health-information h2,
+.bmi-information h2 {
+    margin-top: 0;
+}
+
+.health-information p,
+.bmi-information p {
+    line-height: 1.7;
+    color: #526174;
+}
+
+.general-note {
+    font-size: 13px;
+    color: #718096;
+}
+
+/* BMI limitations */
+.limitation {
+    border-left: 4px solid #2589e8;
+    padding-left: 15px;
+    margin-top: 22px;
+}
+
+.limitation h3 {
+    margin-bottom: 7px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 22px;
+    color: #718096;
+    font-size: 13px;
+}
+
+/* Mobile layout */
+@media (max-width: 750px) {
+
+    main {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .calculator-container {
+        grid-template-columns: 1fr;
+        padding: 22px;
+        gap: 30px;
+    }
+
+    .gauge-ranges,
+    .gauge-categories {
+        font-size: 9px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .health-information,
+    .bmi-information {
+        padding: 22px;
+    }
+}

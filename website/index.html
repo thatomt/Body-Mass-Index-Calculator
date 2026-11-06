@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BMI Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Website header -->
+    <header>
+        <div class="header-content">
+            <h1>BMI Calculator</h1>
+            <p>Understand your BMI and estimated healthy weight range.</p>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Main calculator panel -->
+        <section class="calculator-container">
+
+            <!-- Left side: User inputs -->
+            <div class="calculator">
+
+                <h2>Calculate Your BMI</h2>
+                <p>Enter your measurements below.</p>
+
+                <div class="input-group">
+                    <label for="height">Height</label>
+
+                    <div class="input-wrapper">
+                        <input
+                            type="number"
+                            id="height"
+                            placeholder="Enter your height"
+                            min="1"
+                            step="any"
+                        >
+                        <span>cm</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="weight">Weight</label>
+
+                    <div class="input-wrapper">
+                        <input
+                            type="number"
+                            id="weight"
+                            placeholder="Enter your weight"
+                            min="1"
+                            step="any"
+                        >
+                        <span>kg</span>
+                    </div>
+                </div>
+
+                <button id="calculate-btn" type="button">
+                    Calculate BMI
+                </button>
+
+                <button id="reset-btn" type="button">
+                    Reset
+                </button>
+
+            </div>
+
+
+            <!-- Right side: BMI results -->
+            <div class="results" id="results" aria-live="polite">
+
+                <h2>Your BMI Result</h2>
+
+                <div class="bmi-value">
+                    <span id="bmi-result">--</span>
+                    <p id="bmi-category">Your BMI category will appear here</p>
+                </div>
+
+
+                <!-- BMI gauge -->
+                <div class="bmi-gauge">
+
+                    <svg viewBox="0 0 300 180"
+                         xmlns="http://www.w3.org/2000/svg"
+                         role="img"
+                         aria-label="BMI category range gauge">
+
+                        <!-- Underweight -->
+                        <path
+                            d="M 30 150 A 120 120 0 0 1 65 65"
+                            fill="none"
+                            stroke="#42A5F5"
+                            stroke-width="22"
+                        />
+
+                        <!-- Normal weight -->
+                        <path
+                            d="M 65 65 A 120 120 0 0 1 150 30"
+                            fill="none"
+                            stroke="#20B486"
+                            stroke-width="22"
+                        />
+
+                        <!-- Overweight -->
+                        <path
+                            d="M 150 30 A 120 120 0 0 1 235 65"
+                            fill="none"
+                            stroke="#F4C542"
+                            stroke-width="22"
+                        />
+
+                        <!-- Obesity -->
+                        <path
+                            d="M 235 65 A 120 120 0 0 1 270 150"
+                            fill="none"
+                            stroke="#EF5350"
+                            stroke-width="22"
+                        />
+
+                        <!-- BMI pointer -->
+                        <line
+                            id="bmi-pointer"
+                            x1="150"
+                            y1="150"
+                            x2="150"
+                            y2="45"
+                            stroke="#263B50"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            transform="rotate(-90 150 150)"
+                        />
+
+                        <circle
+                            cx="150"
+                            cy="150"
+                            r="8"
+                            fill="#263B50"
+                        />
+
+                    </svg>
+
+                    <!-- BMI range labels -->
+                    <div class="gauge-ranges">
+                        <span>Below 18.5</span>
+                        <span>18.5–24.9</span>
+                        <span>25–29.9</span>
+                        <span>30+</span>
+                    </div>
+
+                    <div class="gauge-categories">
+                        <span>Underweight</span>
+                        <span>Normal</span>
+                        <span>Overweight</span>
+                        <span>Obesity</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Estimated healthy weight range -->
+                <div class="weight-range">
+
+                    <h3>Estimated Healthy Weight Range</h3>
+
+                    <p id="weight-range">--</p>
+
+                    <small>
+                        Based on an adult BMI reference range of 18.5–24.9.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Health interpretation -->
+        <section class="health-information">
+
+            <h2>Understanding Your Results</h2>
+
+            <p id="health-message">
+                Your health interpretation will appear here after calculation.
+            </p>
+
+            <p class="general-note">
+                BMI is a screening tool and does not diagnose health conditions.
+                It should be interpreted alongside other health indicators.
+            </p>
+
+        </section>
+
+
+        <!-- BMI limitations -->
+        <section class="bmi-information">
+
+            <h2>Important: BMI Limitations</h2>
+
+            <div class="limitation">
+
+                <h3>Pregnancy</h3>
+
+                <p>
+                    BMI is highly inaccurate during pregnancy because
+                    pregnancy-related weight changes make standard BMI
+                    calculations unreliable.
+                </p>
+
+            </div>
+
+            <div class="limitation">
+
+                <h3>Bodybuilders and muscular individuals</h3>
+
+                <p>
+                    BMI can be highly inaccurate for bodybuilders because
+                    it does not distinguish muscle mass from body fat,
+                    potentially classifying muscular individuals as
+                    overweight or obese.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Website footer -->
+    <footer>
+        <p>BMI Calculator | Educational Health Tool</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
