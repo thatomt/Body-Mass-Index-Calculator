@@ -1,3 +1,4 @@
+const bmiPointer = document.getElementById("bmi-pointer");
 const heightInput = document.getElementById("height");
 const weightInput = document.getElementById("weight");
 
@@ -44,6 +45,26 @@ function calculateWeightRange(height) {
     };
 }
 
+// Move the BMI gauge pointer
+function moveBMIPointer(bmi) {
+
+    // Keep the pointer within the gauge
+    if (bmi < 15) {
+        bmi = 15;
+    } else if (bmi > 40) {
+        bmi = 40;
+    }
+
+    // Convert the BMI value into an angle
+    const angle = ((bmi - 15) / 25) * 180 - 90;
+
+    // Rotate the pointer
+    bmiPointer.setAttribute(
+        "transform",
+        `rotate(${angle} 150 150)`
+    );
+}
+
 
 function getHealthMessage(category) {
 
@@ -79,6 +100,7 @@ calculateButton.addEventListener("click", function () {
 
     bmiResult.textContent = bmi.toFixed(1);
     bmiCategory.textContent = category;
+    moveBMIPointer(bmi);
 
     weightRange.textContent =
         range.minimum.toFixed(1) + " kg - " +
@@ -98,6 +120,8 @@ resetButton.addEventListener("click", function () {
     bmiCategory.textContent = "--";
     weightRange.textContent = "--";
     healthMessage.textContent = "";
+    // Return the pointer to its starting position
+    bmiPointer.setAttribute("transform", "rotate(-90 150 150)");
 
 });
 

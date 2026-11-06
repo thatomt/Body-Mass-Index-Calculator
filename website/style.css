@@ -148,7 +148,7 @@ button:hover {
 
 /* BMI gauge */
 .bmi-gauge {
-    max-width: 460px;
+    max-width: 500px;
     margin: 20px auto;
 }
 
@@ -271,5 +271,12 @@ footer {
     .health-information,
     .bmi-information {
         padding: 22px;
+    }
+    /* Labels inside the coloured BMI gauge */
+    .gauge-labels text {
+        font-size: 7px;
+        font-weight: bold;
+        fill: #263b50;
+        text-anchor: middle;
     }
 }
