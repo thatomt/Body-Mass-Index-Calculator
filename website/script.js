@@ -48,15 +48,27 @@ function calculateWeightRange(height) {
 // Move the BMI gauge pointer
 function moveBMIPointer(bmi) {
 
-    // Keep the pointer within the gauge
-    if (bmi < 15) {
-        bmi = 15;
-    } else if (bmi > 40) {
-        bmi = 40;
+    let angle;
+
+    // Underweight: 15 to 18.5
+    if (bmi < 18.5) {
+        angle = -90 + ((bmi - 15) / 3.5) * 45;
     }
 
-    // Convert the BMI value into an angle
-    const angle = ((bmi - 15) / 25) * 180 - 90;
+    // Normal weight: 18.5 to 25
+    else if (bmi < 25) {
+        angle = -45 + ((bmi - 18.5) / 6.5) * 45;
+    }
+
+    // Overweight: 25 to 30
+    else if (bmi < 30) {
+        angle = ((bmi - 25) / 5) * 45;
+    }
+
+    // Obesity: 30 to 40
+    else {
+        angle = 45 + ((Math.min(bmi, 40) - 30) / 10) * 45;
+    }
 
     // Rotate the pointer
     bmiPointer.setAttribute(
